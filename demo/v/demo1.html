@@ -1,0 +1,46 @@
+<html>
+<head></head>
+<body>
+	<button id="demo1"></button>
+</body>
+<script type="text/javascript" src="../latte_dom.js"></script>
+<script type="text/javascript">
+	var View = latte.require("latte_dom/v/view");
+	var view = View.create("#demo1");
+	var r = view.attr({
+		"width" :100,
+		"value": "o",
+	}).classed({
+		"width": true
+	}).style("width", 100).attr("height", 100).style("width");
+	console.log(r);
+	var h = view.attr("width", 100)
+		.attr({
+			"height":100
+		}).attr("height");
+	console.log(h);
+	var w = view.classed("height", true)
+		.classed({
+		"width": true
+	}).classed("width");
+	console.log(w);
+	var s = view.style("width", "100px")
+		.style({
+			height: "100px"
+		}).
+		style("height");
+	console.log(s);
+	var t = view.text("hello").text();
+	console.log(t);
+	var h = view.html("<a>a</a>").html();
+	console.log(h);
+	view.on("click", function(e) {
+		console.log(this.__onclick);
+	});
+	console.log(view.on("click"));
+	view.once("click", function(e) {
+		console.log("b");
+	});
+	view.transition(1000).attr("width", 100);
+</script>
+</html>

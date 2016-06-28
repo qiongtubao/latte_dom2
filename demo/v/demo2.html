@@ -1,0 +1,20 @@
+<html>
+<head></head>
+<body>
+	<div  id="demo1"></div>
+</body>
+<script type="text/javascript" src="../latte_dom.js"></script>
+<script type="text/javascript">
+	var View = latte.require("latte_dom/v/view");
+	var view = View.create("#demo1");
+	var r = view.style({
+		"background-color" :"#000",
+		width: 100,
+		height: 100
+	});
+	
+	view.transition(1000).duration(10000).on("interrupt", function(a,b,c) {
+		console.log(a, b,c, this);
+	}).delay(1000).ease(1).style("background-color", "#fff");
+</script>
+</html>
