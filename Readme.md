@@ -8,7 +8,7 @@ latte_dom2
 html:
 ```html
 	<div latte-controller="html">
-        <button latte-html="{{a}} {{b}}"></button>
+        <div latte-html="{{a}} {{b}}"></div>
     </div>
 ```
 js:
