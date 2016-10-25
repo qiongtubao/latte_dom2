@@ -3,6 +3,25 @@ latte_dom2
 
 #Tag
 
+##数据绑定  latte-data指令
+html:
+```html
+	<div latte-controller="dataDemo">
+        <div latte-data="data" id="data">
+        	<p latte-html="{{name}}"></p>
+        </div>
+    </div>
+```
+```js
+	var latte_dom = latte.require("latte_dom");
+	var data = {
+		data: {
+			name:"abc"
+		}
+	};
+	var box = latte_dom.define("dataDemo", data);
+```
+
 ##文本显示绑定  latte-html 指令 
 
 html:
